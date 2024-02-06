@@ -4,8 +4,6 @@ import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import hmr from 'rollup-plugin-hot'
-
-// import es3 from 'rollup-plugin-es3';
 import { babel } from '@rollup/plugin-babel';
 
 
@@ -137,7 +135,6 @@ export default {
       // nothing else.
       compatModuleHot: !isHot,
     }),
-    // es3(),
     babel({
       babelHelpers: 'bundled',
       extensions: [".js", ".mjs", ".html", ".svelte"],
