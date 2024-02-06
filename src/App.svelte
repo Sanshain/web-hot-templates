@@ -24,6 +24,7 @@
 	<p>
 		This page has been open for {counter}s.
 	</p>
+  <input type="text" bind:value={name}>
 </main>
 
 <style>
@@ -36,6 +37,7 @@
 
   h1 {
     color: #ff3e00;
+    /* color: gray; */
     text-transform: uppercase;
     font-size: 4em;
     font-weight: 100;

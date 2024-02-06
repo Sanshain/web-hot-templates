@@ -5,6 +5,18 @@ import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import hmr from 'rollup-plugin-hot'
 
+// import es3 from 'rollup-plugin-es3';
+import { babel } from '@rollup/plugin-babel';
+
+
+
+
+// as alt consider the 
+/**
+ * - https://github.com/writebetacode/rollup-plugin-inject-hot-css
+ */
+
+
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
 // routers using History API / pushState)
@@ -107,7 +119,7 @@ export default {
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    isProduction && terser(),
+    // isProduction && terser(),
 
     hmr({
       public: 'public',
@@ -125,6 +137,14 @@ export default {
       // nothing else.
       compatModuleHot: !isHot,
     }),
+    // es3(),
+    babel({
+      babelHelpers: 'bundled',
+      extensions: [".js", ".mjs", ".html", ".svelte"],
+      presets: [
+        ['@babel/preset-env', { targets: 'ie 10' },],
+      ]
+    })
   ],
   watch: {
     clearScreen: false,
