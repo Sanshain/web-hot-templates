@@ -1,10 +1,12 @@
-<style>
+<style lang="less">
+	@color: green;
 	p {
-		color: gray;
+		color: @color;
 		font-family: 'Comic Sans MS', cursive;
 		font-size: 2em;
 	}
 </style>
 
 <p>!B8;87>20=>!</p>
-<input type="text" placeholder="12">
+<input type="text" placeholder="12"> 
+

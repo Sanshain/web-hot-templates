@@ -2,6 +2,12 @@
 
 ---
 
+## Template features: 
+
+- tuned less preprocessor 
+- live sirving (like live reloading w/o code editor)
+
+
 # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
