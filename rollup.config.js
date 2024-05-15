@@ -4,6 +4,14 @@ import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
 import hmr from 'rollup-plugin-hot'
+import typescript from "@rollup/plugin-typescript";
+
+
+// as alt consider the 
+/**
+ * - https://github.com/writebetacode/rollup-plugin-inject-hot-css
+ */
+
 
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
@@ -54,7 +62,7 @@ function serve() {
 }
 
 export default {
-  input: 'src/main.js',
+  input: 'src/main.ts',
   output: {
     sourcemap: true,
     format: 'iife',
@@ -64,7 +72,7 @@ export default {
   plugins: [
     svelte({
       // enable run-time checks when not in production
-      dev: !isProduction,
+      dev: !isProduction,      
       // we'll extract any component CSS out into
       // a separate file - better for performance
       // NOTE when hot option is enabled, a blank file will be written to
@@ -96,6 +104,10 @@ export default {
       dedupe: ['svelte'],
     }),
     commonjs(),
+    typescript({
+      exclude: ['.svelte'],
+      sourceMap: true
+    }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated

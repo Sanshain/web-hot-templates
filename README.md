@@ -38,6 +38,18 @@ npm run dev
 
 Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and... Eyeball!
 
+
+
+## Prepared template constisting out of the box of:
+
+- hot reloading with rollup && nollup (checked up)
+- typescript support (keep in mind: it might raise an error in console on start, but 'll be work fine)
+- due hot reloading works faster x5 then without it
+
+
+
+# HMR usage: 
+
 ## Usage
 
 HMR is supported both with [Nollup](https://github.com/PepsRyuu/nollup) or with Rollup itself with (very experimental) [rollup-plugin-hot](https://github.com/rixo/rollup-plugin-hot).
